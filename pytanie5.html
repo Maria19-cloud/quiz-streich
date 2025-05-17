@@ -7,7 +7,7 @@
   <title>Pytanie 5</title>
   <script>
     function sprawdz(odpowiedz) {
-      const prawidlowe = ['b','c','a','b','e'];
+      const prawidlowe = ['e'];
       if (odpowiedz === prawidlowe[4]) {
         localStorage.setItem('pytanie5', 'true');
         alert('Świetnie! znajdź kolejny kod QR');
@@ -20,14 +20,13 @@
 </head>
 <body>
   <h2>Pytanie 5</h2>
-  <p>Opis pytania i opcje odpowiedzi z quizu</p>
+  <p>Co trzeba zrobić, żeby zostać błogosławionym?</p>
   
-  <button onclick="sprawdz('a')">a</button>
-  <button onclick="sprawdz('b')">b</button>
-  <button onclick="sprawdz('c')">c</button>
-    
-  <button onclick="sprawdz('d')">d</button>
-  <button onclick="sprawdz('e')">e</button>
+  <button onclick="sprawdz('a')">a.	Rozwijać swoją relacje z Bogiem</button>
+  <button onclick="sprawdz('b')">b.	Być zaangażowanym w życie rodzinne</button>
+  <button onclick="sprawdz('c')">c.	Być dobrym kolegą</button>
+  <button onclick="sprawdz('d')">d.	Być pilnym uczniem</button>
+  <button onclick="sprawdz('e')">e.	Wszystkie odpowiedzi są poprawne</button>
         
 </body>
 </html>
