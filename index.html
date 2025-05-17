@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz o bł. Stanisławie Streichu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; background: #fefefe; }
+    .question { margin-bottom: 2em; padding: 1em; border: 1px solid #ccc; border-radius: 10px; }
+    button { padding: 0.5em 1em; margin-top: 1em; }
+    .correct { color: green; font-weight: bold; }
+    .wrong { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Quiz o bł. Stanisławie Streichu</h1>
+  <div id="quiz"></div>
+  <div id="finalMessage" style="display:none; font-size:1.5em; font-weight:bold;"></div>
+  <script>
+    const questions = [
+      {
+        title: "Kto to jest?",
+        intro: "",
+        options: {
+          a: "Oj. Maxymilian Maria Kolbe",
+          b: "Ks. Stanisław Streich który będzie dziś błogosławiony",
+          c: "wikary"
+        },
+        correct: "b"
+      },
+      {
+        title: "W której parafii był proboszczem:",
+        intro: "Stanisław Streich przyszedł na świat 27 sierpnia 1902 roku w Bydgoszczy. W 1935 roku powstaje parafia św. Jana Bosko Luboń – Żabikowo, której proboszczem został 1 października 1935 roku.",
+        options: {
+          a: "W Rokietnicy",
+          b: "W Poznaniu",
+          c: "W Luboniu"
+        },
+        correct: "c"
+      },
+      {
+        title: "Kiedy został postrzelony Ks. Streich:",
+        intro: "27 lutego 1938 roku, w trakcie przedpołudniowej mszy św. z udziałem dzieci...",
+        options: {
+          a: "W trakcie Mszy w 1938 roku",
+          b: "Nie wiadomo",
+          c: "Dawno"
+        },
+        correct: "a"
+      },
+      {
+        title: "Kiedy odbędzie się Msza beatyfikacyjna ks. Stanisława Streicha?",
+        intro: "23 maja 2024 papież Franciszek zatwierdził dekret o męczeństwie...",
+        options: {
+          a: "Za rok",
+          b: "25 maja 2025",
+          c: "Nie wiadomo"
+        },
+        correct: "b"
+      },
+      {
+        title: "Co trzeba zrobić, żeby zostać błogosławionym?",
+        intro: "",
+        options: {
+          a: "Być pilnym uczniem",
+          b: "Być zaangażowanym w życie rodzinne",
+          c: "Być dobrym kolegą",
+          d: "Rozwijać swoją relację z Bogiem",
+          e: "Wszystkie odpowiedzi są poprawne"
+        },
+        correct: "e"
+      }
+    ];
+
+    let correctCount = 0;
+    const answered = new Set();
+
+    function renderQuiz() {
+      const quiz = document.getElementById("quiz");
+      quiz.innerHTML = "";
+      questions.forEach((q, idx) => {
+        const div = document.createElement("div");
+        div.className = "question";
+        let html = `<h3>${q.title}</h3>`;
+        if (q.intro) html += `<p>${q.intro}</p>`;
+        for (const [key, val] of Object.entries(q.options)) {
+          html += `<div><label><input type="radio" name="q${idx}" value="${key}"/> ${val}</label></div>`;
+        }
+        html += `<button onclick="checkAnswer(${idx})">Sprawdź</button><div id="msg${idx}"></div>`;
+        div.innerHTML = html;
+        quiz.appendChild(div);
+      });
+    }
+
+    function checkAnswer(idx) {
+      const q = questions[idx];
+      const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+      if (!selected) return;
+      const msg = document.getElementById("msg" + idx);
+      if (selected.value === q.correct) {
+        msg.innerHTML = "<p class='correct'>Świetnie! znajdź kolejny kod QR</p>";
+        if (!answered.has(idx)) {
+          correctCount++;
+          answered.add(idx);
+        }
+      } else {
+        msg.innerHTML = "<p class='wrong'>spróbuj jeszcze raz :/</p>";
+      }
+
+      if (correctCount === questions.length) {
+        document.getElementById("finalMessage").style.display = "block";
+        document.getElementById("finalMessage").innerText = "Dobra robota! Należy Ci się nagroda!";
+        setTimeout(() => {
+          window.location.href = "https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif";
+        }, 3000);
+      }
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
