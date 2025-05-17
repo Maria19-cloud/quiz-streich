@@ -7,7 +7,7 @@
   <title>Pytanie 1</title>
   <script>
     function sprawdz(odpowiedz) {
-      const prawidlowe = ['b.	Ks. Stanisław Streich który będzie od dziś błogosławiony'];
+      const prawidlowe = ['b'];
       if (odpowiedz === prawidlowe[0]) {
         localStorage.setItem('pytanie1', 'true');
         alert('Świetnie! znajdź kolejny kod QR');
@@ -22,9 +22,9 @@
   <h2>Pytanie 1</h2>
   <p>Kto to jest?</p>
   
-  <button onclick="sprawdz('a.	Oj. Maxymilian Maria Kolbe')">a</button>
-  <button onclick="sprawdz('b.	Ks. Stanisław Streich który będzie od dziś błogosławiony')">b</button>
-  <button onclick="sprawdz('c.	ks. wikary')">c</button>
+  <button onclick="sprawdz('a')">a.	Oj. Maxymilian Maria Kolbe</button>
+  <button onclick="sprawdz('b')">b.	Ks. Stanisław Streich który będzie od dziś błogosławiony</button>
+  <button onclick="sprawdz('c')">c.	ks. wikary</button>
     
 </body>
 </html>
