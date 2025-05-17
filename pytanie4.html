@@ -7,7 +7,7 @@
   <title>Pytanie 4</title>
   <script>
     function sprawdz(odpowiedz) {
-      const prawidlowe = ['b'];
+      const prawidlowe = ['b','c','a','b','e'];
       if (odpowiedz === prawidlowe[3]) {
         localStorage.setItem('pytanie4', 'true');
         alert('Świetnie! znajdź kolejny kod QR');
@@ -23,7 +23,7 @@
   <p>Kiedy odbędzie się Msza beatyfikacyjna ks. Stanisława Streicha:</p>
   
   <button onclick="sprawdz('a')">a.	Za rok</button>
-  <button onclick="sprawdz('b')">b.	25 maja 2025</button>
+  <button onclick="sprawdz('b')">b.	24 maja 2025</button>
   <button onclick="sprawdz('c')">c.	Nie wiadomo</button>
     
 </body>
