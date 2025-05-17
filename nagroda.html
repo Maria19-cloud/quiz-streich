@@ -1,23 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gratulacje!</title>
-  <script>
-    window.onload = () => {
-      const wszystkie = ['pytanie1','pytanie2','pytanie3','pytanie4','pytanie5'];
-      const poprawne = wszystkie.every(p => localStorage.getItem(p) === 'true');
-      if (!poprawne) window.location.href = 'index.html';
-    };
-  </script>
 </head>
-<body>
-  <h1>Dobra robota! Należy Ci się nagroda!</h1>
-  <img src="gif-jezus.gif" alt="Jezus zapraszający do stołu" style="max-width: 100%; height: auto;">
-  <p><strong>I Ty możesz zostać świętym!</strong></p>
-  <p><strong>Zapraszamy do naszych wspólnot!</strong></p>
-  <p><em>Boże Słoneczka – próba w każdą sobotę o 11:00</em></p>
+<body style="text-align:center; font-family:sans-serif;">
+  <h1>Dobra robota!</h1>
+  <img src="gif-jezus.gif" alt="Nagroda" style="max-width: 100%; height: auto;" />
+  <p>I Ty możesz zostać świętym! Zapraszamy do naszych wspólnot!</p>
+  <p><strong>Boże Słoneczka – próba w każdą sobotę o 11:00</strong></p>
 </body>
 </html>
