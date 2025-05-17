@@ -6,22 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz o bł. Stanisławie Streichu</title>
   <script>
-    function sprawdzWynik() {
-      const pytania = ['pytanie1', 'pytanie2', 'pytanie3', 'pytanie4', 'pytanie5'];
-      const poprawne = pytania.every(p => localStorage.getItem(p) === 'true');
-      
-      if (poprawne) {
-        alert('Dobra robota! Należy Ci się nagroda!');
-        window.location.href = 'nagroda.html'; // Tutaj strona z gifem
-      } else {
-        alert('Odpowiedz poprawnie na wszystkie pytania!');
-      }
+  document.addEventListener("DOMContentLoaded", () => {
+    const pytania = ['pytanie1', 'pytanie2', 'pytanie3', 'pytanie4', 'pytanie5'];
+    const poprawne = pytania.every(p => localStorage.getItem(p) === 'true');
+
+    if (poprawne) {
+      alert('Dobra robota! Należy Ci się nagroda!');
+      window.location.href = 'nagroda.html';
     }
-  </script>
+  });
+</script>
 </head>
 <body>
   <h1>Quiz o bł. Stanisławie Streichu</h1>
   <p>Aby odebrać nagrodę, zeskanuj wszystkie 5 kodów QR i odpowiedz poprawnie.</p>
-  <button onclick="sprawdzWynik()">Sprawdź, czy zdobyłeś nagrodę</button>
 </body>
 </html>
