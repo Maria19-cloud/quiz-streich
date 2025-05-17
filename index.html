@@ -8,17 +8,30 @@
   <script>
   document.addEventListener("DOMContentLoaded", () => {
     const pytania = ['pytanie1', 'pytanie2', 'pytanie3', 'pytanie4', 'pytanie5'];
-    const poprawne = pytania.every(p => localStorage.getItem(p) === 'true');
+    const poprawne = pytania.filter(p => localStorage.getItem(p) === 'true');
 
-    if (poprawne) {
+    // Pokazujemy status (ile odpowiedzi jest poprawnych)
+    const status = document.getElementById("status");
+    status.textContent = `Poprawnych odpowiedzi: ${poprawne.length} z 5`;
+
+    // Jeśli wszystkie poprawne, przekieruj do nagrody
+    if (poprawne.length === 5) {
       alert('Dobra robota! Należy Ci się nagroda!');
       window.location.href = 'nagroda.html';
     }
   });
-</script>
+  </script>
 </head>
 <body>
   <h1>Quiz o bł. Stanisławie Streichu</h1>
   <p>Aby odebrać nagrodę, zeskanuj wszystkie 5 kodów QR i odpowiedz poprawnie.</p>
+
+  <!-- Tu pokażemy status -->
+  <p id="status"></p>
+
+  <!-- Przycisk do testów (czyści odpowiedzi) -->
+  <button onclick="localStorage.clear(); alert('Wyczyszczono odpowiedzi'); location.reload();">
+    Resetuj quiz
+  </button>
 </body>
 </html>
