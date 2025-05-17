@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pytanie 1</title>
+  <script>
+    function sprawdz(odpowiedz) {
+      const prawidlowe = ['b','c','a','b','e'];
+      if (odpowiedz === prawidlowe[0]) {
+        localStorage.setItem('pytanie1', 'true');
+        alert('Świetnie! znajdź kolejny kod QR');
+        window.location.href = 'index.html';
+      } else {
+        alert('Spróbuj jeszcze raz :/');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Pytanie 1</h2>
+  <p>Opis pytania i opcje odpowiedzi z quizu</p>
+  
+  <button onclick="sprawdz('a')">a</button>
+  <button onclick="sprawdz('b')">b</button>
+  <button onclick="sprawdz('c')">c</button>
+    
+</body>
+</html>
