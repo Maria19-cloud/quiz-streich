@@ -69,7 +69,7 @@
 
       // Funkcja sprawdzająca odpowiedź
       window.sprawdz = function(odpowiedz) {
-        const prawidlowe = ['b'];
+        const prawidlowe =  ['b','c','a','b','e'];
         if (odpowiedz === prawidlowe[0]) {
           localStorage.setItem(klucz, 'true');
           alert('Świetnie! znajdź kolejny kod QR');
@@ -79,6 +79,14 @@
         }
       };
     });
+ 
+//Funkcja wymuszajaca pelne przeladowanie strony
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+
   </script>
 </head>
 <body>
