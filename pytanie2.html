@@ -60,16 +60,27 @@
 
   
   <script>
-    function sprawdz(odpowiedz) {
+    document.addEventListener("DOMContentLoaded", () => {
+      const klucz = 'pytanie2';
+     // Jeśli pytanie już rozwiązane – przekieruj
+      if (localStorage.getItem(klucz) === 'true') {
+        alert("Już odpowiedziałeś na to pytanie!");
+        window.location.href = "index.html";
+        return;
+      }
+
+     // Funkcja sprawdzająca odpowiedź 
+    window.sprawdz = function (odpowiedz) {
       const prawidlowe = ['b','c','a','b','e'];
       if (odpowiedz === prawidlowe[1]) {
-        localStorage.setItem('pytanie2', 'true');
+        localStorage.setItem(klucz, 'true');
         alert('Świetnie! znajdź kolejny kod QR');
         window.location.href = 'index.html';
       } else {
         alert('Spróbuj jeszcze raz :/');
       }
-    }
+    };
+    });   
   </script>
 </head>
 <body>
