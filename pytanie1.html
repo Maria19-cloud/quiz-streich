@@ -7,27 +7,34 @@
   <title>Pytanie 1</title>
   <style>
     body {
-      font-size: 1.2em;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       padding: 20px;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.4em;
-      margin-bottom: 20px;
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    .odpowiedzi {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
 
     button {
       display: block;
-      width: 100%;
+      width: 90%;
       max-width: 400px;
-      margin: 10px auto;
       padding: 15px;
-      font-size: 1.3em;
+      font-size: 1.2em;
       background-color: #cea086;
       color: white;
       border: none;
@@ -58,7 +65,7 @@
   <p>Kto to jest?</p>
   
   <button onclick="sprawdz('a')">a.	Oj. Maxymilian Maria Kolbe</button>
-  <button onclick="sprawdz('b')">b.	Ks. Stanisław Streich który będzie od dziś błogosławiony</button>
+  <button onclick="sprawdz('b')">b.	Ks. Stanisław Streich</button>
   <button onclick="sprawdz('c')">c.	ks. wikary</button>
     
 </body>
