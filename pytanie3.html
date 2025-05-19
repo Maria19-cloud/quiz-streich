@@ -5,6 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pytanie 3</title>
+
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    .odpowiedzi {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    button {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      padding: 15px;
+      font-size: 1.2em;
+      background-color: #cea086;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #cea086;
+    }
+  </style>
+  
   <script>
     function sprawdz(odpowiedz) {
       const prawidlowe = ['b','c','a','b','e'];
@@ -24,7 +67,7 @@
   
   <button onclick="sprawdz('a')">a.	W trakcie Mszy w 1938 roku</button>
   <button onclick="sprawdz('b')">b.	Nie wiadomo</button>
-  <button onclick="sprawdz('c')">c.	Dawno</button>
+  <button onclick="sprawdz('c')">c.	W Poznaniu 1935 roku</button>
     
 </body>
 </html>
