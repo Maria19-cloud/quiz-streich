@@ -13,6 +13,39 @@
   gtag('js', new Date());
 
   gtag('config', 'G-27PRQNP490');
+
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .nagroda-button {
+      font-size: 1.8em;
+      padding: 20px 30px;
+      background-color: #cea086;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .nagroda-button:hover {
+      background-color: #b97e64;
+    }
+
+    .prezent-ikona {
+      font-size: 4em;
+      margin-top: 30px;
+    }
+
+    .ukryty {
+      display: none;
+    }
+  </style>
+  
 </script>
   
   <script>
@@ -20,39 +53,41 @@
       const pytania = ['pytanie1', 'pytanie2', 'pytanie3', 'pytanie4', 'pytanie5'];
       const poprawne = pytania.every(p => localStorage.getItem(p) === 'true');
 
-      const przyciskNagrody = document.getElementById('nagroda-btn');
       if (poprawne) {
-        przyciskNagrody.style.display = 'block';
+        document.getElementById('gratulacje').classList.remove('ukryty');
+        document.getElementById('info').classList.add('ukryty');
+        document.getElementById('przycisk-nagrody').classList.remove('ukryty');
+        document.getElementById('prezent').classList.remove('ukryty');
       }
     });
 
     function resetujQuiz() {
       localStorage.clear();
-      alert('Wyczyszczono odpowiedzi');
+      alert("Quiz został zresetowany.");
       location.reload();
     }
-
-    function przejdzDoNagrody() {
-      window.location.href = 'nagroda.html';
-    }
+ 
   </script>
 </head>
 <body>
   <h1>Quiz o bł. Stanisławie Streichu</h1>
-  <p>Aby odebrać nagrodę, zeskanuj wszystkie 5 kodów QR i odpowiedz poprawnie na pytania.</p>
-  <p></p>
-  <p>Możesz teraz opuścić tę stronę i otworzyc skaner kodów QR lub aparat 📸, aby zeskanowac kolejny kod</p>
 
-  <!-- Przycisk nagrody – widoczny tylko gdy wszystkie pytania są zaliczone -->
-  <button id="nagroda-btn" onclick="przejdzDoNagrody()" style="display: none;">
-    🎁 Odbierz nagrodę
+  <div id="info">
+    <p>Aby odebrać nagrodę, zeskanuj wszystkie 5 kodów QR i odpowiedz poprawnie na pytania.</p>
+    <p>Możesz teraz opuścić tę stronę i otworzyć skaner kodów QR lub aparat 📸, aby zeskanować kolejny kod.</p>
+  </div>
+
+  <div id="gratulacje" class="ukryty">
+    <p>🎉 Brawo! Ukończyłeś cały quiz.</p>
+  </div>
+
+  <div id="prezent" class="prezent-ikona ukryty">🎁</div>
+
+  <button id="przycisk-nagrody" class="nagroda-button ukryty" onclick="window.location.href='nagroda.html'">
+    Odbierz nagrodę
   </button>
 
-  <br/><br/>
-
-  <!-- Przycisk resetowania quizu -->
-  <button onclick="resetujQuiz()">
-    🔄 Resetuj quiz
-  </button>
+  <br><br>
+  <button onclick="resetujQuiz()">Resetuj quiz</button>
 </body>
 </html>
