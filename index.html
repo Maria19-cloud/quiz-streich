@@ -47,19 +47,23 @@
       display: none;
     }
 
-        .reset-button {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #f4f4f4;
-      border: 1px solid #ccc;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      color: #333;
-      cursor: pointer;
-    }
+              .reset-button {
+          position: fixed;
+          bottom: 20px;
+          left: 20px; /* zmiana z center na lewy róg */
+          background-color: #f4f4f4;
+          border: 1px solid #ccc;
+          padding: 10px 20px;
+          border-radius: 6px;
+          font-size: 0.9em;
+          color: #333;
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        
+        .reset-button:hover {
+          opacity: 1;
+        }
   </style>
 
   <script>
