@@ -46,6 +46,20 @@
     .ukryty {
       display: none;
     }
+
+        .reset-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      color: #333;
+      cursor: pointer;
+    }
   </style>
 
   <script>
@@ -86,7 +100,7 @@
     Odbierz nagrodę
   </button>
 
-  <br><br>
-  <button onclick="resetujQuiz()">Resetuj quiz</button>
+  <button class="reset-button" onclick="resetujQuiz()">Resetuj quiz</button>
+
 </body>
 </html>
